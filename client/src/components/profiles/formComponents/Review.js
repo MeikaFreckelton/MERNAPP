@@ -35,12 +35,25 @@ const Review = ({ setForm, detailsData, skillsData, workData, educationData, lin
           <div>
             {
               Object.entries(detailsData).map(([key, value]) => {
-                // if (key === "interests" ){
-                //   return key.map((x) => <li key={x}>x</li>)
-                // } else
-                // if (key === "interests" || key === "profilePhoto"){
-                //   return null
-                // }
+
+
+                if (typeof(value) === "object" && value.length > 1){
+                  return (<div>
+                    <li>Interests:</li>
+                    {value.map((x) => <li key={x}>{x}</li>)}
+                  </div>
+                  )
+                } else if (key === "profilePhoto"){
+                  console.log(key, value, value.name)
+                  return (
+                    <div>
+                      <li>profile photo:</li>
+                      <li key={key}>{value.name}</li>
+                    </div>
+                    // <li key={key}>{value}</li>
+                  )
+
+                }
                 return <li key={key}>{key}: {value}</li>
 
               })
@@ -128,7 +141,15 @@ const Review = ({ setForm, detailsData, skillsData, workData, educationData, lin
           <div>
           {
               Object.entries(linkData).map(([key, value]) => {
-                if (typeof(value) === "object"){
+                if (key === "resume"){
+                  console.log("RESUME", key, value)
+                  return (
+                    <div>
+                      <li>Resume:</li>
+                      <li key={key}>{value.name}</li>
+                    </div>
+                  )
+                } else if (typeof(value) === "object"){
                   return Object.entries(value).map(([k, v]) => {
                     return (
                       <div>
@@ -136,7 +157,7 @@ const Review = ({ setForm, detailsData, skillsData, workData, educationData, lin
                       </div>
                     )
                   })
-                }
+                } else 
                 return <li key={key}>{key}: {value}</li>
               })
             }

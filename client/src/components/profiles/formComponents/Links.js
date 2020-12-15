@@ -112,6 +112,7 @@ const Links = ({ setLinks, linkData, navigation,  }) => {
             ...linkData,
             resume: e.target.files[0]
         })
+        console.log("NAME: ", resume.name)
     }
 
     return(
