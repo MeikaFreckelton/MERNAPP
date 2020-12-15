@@ -20,6 +20,7 @@ const Skills = ({ setSkills, skillsData, navigation }) => {
 
     // function to handle regular input
     function handleChange (e) {
+
         const { name, value } = e.target
         setSkills({
             ...skillsData,

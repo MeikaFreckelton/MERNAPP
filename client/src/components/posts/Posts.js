@@ -1,7 +1,7 @@
 import React from 'react'
+import Post from './Post'
 
-
-const Posts = () => {
+const Posts = ({postsData}) => {
 
 
     return(
@@ -10,6 +10,15 @@ const Posts = () => {
                 <h4>Posts</h4>
             </div>
             
+            <div>
+                {
+                    postsData
+                    .sort((a, b) => b.modified_date - a.modified_date)
+                    .map((post) => <Post key={post._id} post={post} />)
+                }
+            </div>
+
+
         </div>
     )
 }
