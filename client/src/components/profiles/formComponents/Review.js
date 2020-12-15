@@ -7,19 +7,14 @@ const Review = ({ setForm, detailsData, skillsData, workData, educationData, lin
   
   const { go, previous } = navigation;
 
-  // console.log(linksData)
 
-  const displayExtras = () => {
-
-  }
-
-  function Display (data) {
-    return (
-      Object.entries(data).map(([key, value]) => {
-        return <li key={key}>{key}: {value}</li>
-      })
-    )
-  }
+  // function Display (data) {
+  //   return (
+  //     Object.entries(data).map(([key, value]) => {
+  //       return <li key={key}>{key}: {value}</li>
+  //     })
+  //   )
+  // }
 
 
   return (
@@ -33,6 +28,7 @@ const Review = ({ setForm, detailsData, skillsData, workData, educationData, lin
         <div>
           <h3>Details</h3>
           <div>
+
             {
               Object.entries(detailsData).map(([key, value]) => {
 
@@ -43,17 +39,19 @@ const Review = ({ setForm, detailsData, skillsData, workData, educationData, lin
                     {value.map((x) => <li key={x}>{x}</li>)}
                   </div>
                   )
-                } else if (key === "profilePhoto"){
+                } 
+                
+                else if (key === "profilePhoto"){
                   console.log(key, value, value.name)
                   return (
                     <div>
                       <li>profile photo:</li>
                       <li key={key}>{value.name}</li>
                     </div>
-                    // <li key={key}>{value}</li>
                   )
 
                 }
+                
                 return <li key={key}>{key}: {value}</li>
 
               })

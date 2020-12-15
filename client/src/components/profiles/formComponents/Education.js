@@ -4,22 +4,20 @@ import FormInput from './reusable/FormInput'
 
 const Education = ( { setEducation, educationData, navigation }) => {
     
-    const props = { setEducation, educationData, navigation }
+    const props = { setEducation, educationData }
 
-    const { recentSchool, recentDegree, recentStartDate, recentEndDate, pastEducation } = educationData
+    const { recentSchool, recentDegree, recentStartDate, recentEndDate } = educationData
 
     const { previous, next } = navigation;
 
 
-
+    // handles regular input changes and saves to state :
     function changeHandler (e){
-        const name = e.target.name
-        const value = e.target.value
+        const { name, value } = e.target
         setEducation({
             ...educationData,
             [name]: value
         })
-        console.log(educationData)
     }
 
     return(
@@ -63,19 +61,16 @@ const Education = ( { setEducation, educationData, navigation }) => {
                             </div>
                     
                             <h3>Past Education</h3>
-
                             <PastEducation {...props} />
                             
                         </div>
-
                         </div>
                 </form>
+
                 <button onClick={previous}>back</button>  
                 <button onClick={next}>Next</button>
+
             </div>
-            
-
-
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import FormInput from './reusable/FormInput'
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css';
@@ -6,6 +6,7 @@ import 'react-dropdown/style.css';
 // need to add validation on additional links form -> display error message if no name for additional link is selected
 
 const Links = ({ setLinks, linkData, navigation,  }) => {
+
     // form props :
     const { linkedIn, twitter, instagram, facebook, additionalLinks, portfolio, github, resume } = linkData
     
@@ -33,10 +34,13 @@ const Links = ({ setLinks, linkData, navigation,  }) => {
 
         const div = document.getElementById("additionalForms")
         const valueField = document.createElement("INPUT")
+
         valueField.setAttribute("type", "text")
         valueField.setAttribute("id", "valueField")
         valueField.value = tempValue
+
         valueField.addEventListener("change", handleAdditional)
+
         div.appendChild(valueField)
 
     }
@@ -53,7 +57,7 @@ const Links = ({ setLinks, linkData, navigation,  }) => {
     // add a form field if there are no items in additional links object
     function onSelect (e) {
 
-        const value = e.value
+        const {value} = e
         setTempName(value)
 
         if (Object.entries(additionalLinks).length < 1){
@@ -66,9 +70,7 @@ const Links = ({ setLinks, linkData, navigation,  }) => {
     // set linkdata to the name and value given
     function handleChange (e) {
 
-        const name = e.target.name
-        const value = e.target.value
-
+        const { name, value } = e.target
         setLinks( {
             ...linkData,
             [name]: value
@@ -112,7 +114,6 @@ const Links = ({ setLinks, linkData, navigation,  }) => {
             ...linkData,
             resume: e.target.files[0]
         })
-        console.log("NAME: ", resume.name)
     }
 
     return(

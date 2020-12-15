@@ -2,17 +2,13 @@ import React from 'react'
 import SkillsForm from './skillsComponents/SkillForm'
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css';
-// import './../../../styles/Profile.css'
 import FormInput from './reusable/FormInput'
 
 
-const Skills = ({ setSkills, skillsData, navigation, detailsData }) => {
+const Skills = ({ setSkills, skillsData, navigation }) => {
+
     const props = { setSkills, skillsData, navigation }
-
     const { skillLevel, yearsOfExperience } = skillsData
-    console.log(skillsData)
-
-
     const { previous, next } = navigation;
 
     // due to current bug, have to disable enter keypress from submitting :
@@ -22,29 +18,24 @@ const Skills = ({ setSkills, skillsData, navigation, detailsData }) => {
         }
     }
 
+    // function to handle regular input
     function handleChange (e) {
-        console.log(e)
-        const name = e.target.name
-        const value = e.target.value
+        const { name, value } = e.target
         setSkills({
             ...skillsData,
             [name]: value
         })
-        console.log(skillsData)
-
     }
 
-
-
+    // function to handle dropdown and assign its value to the skill level in form data :
     function onSelect (e) {
-        const value = e.value
+        const { value } = e
         setSkills({
             ...skillsData,
             skillLevel: value
         })
-        console.log(skillsData)
     }
-
+    // options for skill level drop down :
     const options = ['Aspirational', 'Junior-level', 'Mid-level', 'Senior-level']
 
     return(
@@ -68,6 +59,7 @@ const Skills = ({ setSkills, skillsData, navigation, detailsData }) => {
                             <label>
                                 Skill level
                             </label>
+                            {/* dropdown component from package : */}
                             <Dropdown options={options} onChange={onSelect} value={skillLevel} id="skillDropDown" name="skillLevel" />
                         </div>
                         <div>
