@@ -23,50 +23,68 @@ const steps = [
 ]
 
 const initialDetailsData = {
-    profilePhoto: "",
-    firstName: "",
-    lastName: "",
-    username: "",
-    location: "",
-    phoneNumber: "",
-    birthday: "",
-    interests: [],
-    bio: "",
-    briefDescription: ""
+    profilePhoto: "file",
+    firstName: "a",
+    lastName: "aaa",
+    username: "aaa",
+    location: "aa",
+    phoneNumber: "aa",
+    birthday: "aa",
+    interests: ["front end", "full stack", "ai"],
+    bio: "lalalslmdndjifkwsnjif",
+    briefDescription: "kklodjdidfijdj"
 }
 
 const initialSkillsData = {
-    technical: [""],
-    soft: [""],
-    skillLevel: "",
-    yearsOfExperience: ""
+    technical: ["js", "ruby", "react"],
+    soft: ["teamwork", "communication", "leadership"],
+    skillLevel: "mid level",
+    yearsOfExperience: "5"
 }
 
 const initialWorkData = {
-    status: "",
-    currentTitle: "",
-    currentCompany: "",
-    currentStartDate: "",
-    pastRoles: []
+    status: "looking",
+    currentTitle: "dev",
+    currentCompany: "company",
+    currentStartDate: "2020-02-05",
+    pastRoles: [{
+        title: "dev",
+        company: "company",
+        startDate: "8229292",
+        endDate: "lalalala"
+    },{
+        title: "dev",
+        company: "company",
+        startDate: "8229292",
+        endDate: "lalalala"
+    }]
 }
 
 const initialEducationData = {
-    recentSchool: "",
-    recentDegree: "",
-    recentStartDate: "",
-    recentEndDate: "",
-    pastEducation: []
+    recentSchool: "ca",
+    recentDegree: "it",
+    recentStartDate: "8292",
+    recentEndDate: "0202",
+    pastEducation: [{
+        school: "tafe",
+        degree: "gd",
+        startDate: '8383939',
+        endDate: "738393"
+    }]
 }
 
 const initialLinkData = {
-    linkedIn: "",
-    twitter: "",
-    instagram: "",
-    facebook: "",
-    portfolio: "",
-    github: "",
-    resume: "",
-    additionalLinks: {}
+    linkedIn: "akskoss",
+    twitter: "sllsls",
+    instagram: "instaaa",
+    facebook: "faceyy",
+    portfolio: "portfolio",
+    github: "gttt",
+    resume: "file",
+    additionalLinks: {
+        youtube: "kakksks",
+        pinterest: "jajkakaa"
+    }
 
 }
 
@@ -87,23 +105,23 @@ const MultiStepForm = () => {
     const props = { navigation, detailsData, setDetails, skillsData, setSkills, 
     workData, setWork, educationData, setEducation, linkData, setLinks }
 
-    switch (id) {
-        case "details":
-            return <Details {...props} />
-        case "skills":
-            return <Skills {...props} />
-        case "work":
-            return <Work {...props} />
-        case "education":
-            return <Education {...props} />
-        case "links":
-            return <Links {...props} />
-        case "review":
-            return <Review {...props} />
-        default:
-            return null
-    }
-    // return <Review {...props} />
+    // switch (id) {
+    //     case "details":
+    //         return <Details {...props} />
+    //     case "skills":
+    //         return <Skills {...props} />
+    //     case "work":
+    //         return <Work {...props} />
+    //     case "education":
+    //         return <Education {...props} />
+    //     case "links":
+    //         return <Links {...props} />
+    //     case "review":
+    //         return <Review {...props} />
+    //     default:
+    //         return null
+    // }
+    return <Review {...props} />
  
 
     
