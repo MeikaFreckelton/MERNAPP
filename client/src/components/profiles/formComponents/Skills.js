@@ -42,7 +42,9 @@ const Skills = ({ setSkills, skillsData, navigation }) => {
         <div>
             <div className="profileFormDiv">
                 <div className="heading">
-                    Skills
+                    <h4>
+                        Skills
+                    </h4>
                 </div>
                 <form onKeyPress={onKeyPress}>
                     <div>

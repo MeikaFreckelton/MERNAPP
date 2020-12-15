@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 
+// use forminput component
 
 const Register = () => {
 
@@ -12,8 +13,7 @@ const Register = () => {
 
 
     function handleChange(event){
-        const name = event.target.name
-        const value = event.target.value
+        const { name, value } = event.target
         setUserDetails({
             ...userDetails,
             [name]: value
@@ -22,7 +22,7 @@ const Register = () => {
 
     function handleSubmit(event){
         event.preventDefault()
-
+        // functionality ...
     }
 
 
@@ -31,7 +31,7 @@ const Register = () => {
             <div>
 
                 <div className="heading">
-                    register
+                    <h1>Register a new account</h1>
                 </div>
                 <div className="authFormDiv">
                     <form className="authForm" onSubmit={handleSubmit}>

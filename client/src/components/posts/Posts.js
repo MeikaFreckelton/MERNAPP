@@ -6,7 +6,10 @@ const Posts = () => {
 
     return(
         <div>
-            posts
+            <div className="heading">
+                <h4>Posts</h4>
+            </div>
+            
         </div>
     )
 }

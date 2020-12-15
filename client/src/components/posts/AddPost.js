@@ -11,7 +11,7 @@ const AddPost = () => {
             
             <div id="addPostDiv">
                 <div className="heading">
-                    Add post
+                    <h1>Add post</h1>
                 </div>
                 <form id="addPostForm" >
                     <label>Post Title</label>

@@ -8,5 +8,12 @@
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  background-color: #75ACB4;
+  padding: 1%;
+}
+
+#navbar a {
+  color: white;
+  text-decoration: none;
 }
 /*# sourceMappingURL=Navbar.css.map */

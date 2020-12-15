@@ -120,7 +120,9 @@ const Links = ({ setLinks, linkData, navigation,  }) => {
         <div>
             <div>
                 <div className="heading">
-                    Links   
+                <h4>
+                    Links
+                </h4>  
                 </div>
                 <div className="profileFormDiv">
                     <form>

@@ -20,7 +20,9 @@ const Review = ({ setForm, detailsData, skillsData, workData, educationData, lin
   return (
     <div>
       <div className="heading">
-        Review your details
+        <h4>
+          Review your details
+        </h4>
       </div>
       <div>
 

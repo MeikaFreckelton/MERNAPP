@@ -21,7 +21,9 @@ const Work = ({ setWork, workData, navigation }) => {
         <div>
             <div className="profileFormDiv">
                 <div className="heading">
-                    Work Information
+                    <h4>
+                        Work Information
+                    </h4>
                 </div>
                 <div>
                     <form>

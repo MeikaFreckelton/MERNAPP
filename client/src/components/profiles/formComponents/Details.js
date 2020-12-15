@@ -86,7 +86,11 @@ const Details = ({ setDetails, detailsData, navigation }) => {
     return(
         <div>
             <div>
-                <div className="heading">details</div>
+                <div className="heading">
+                    <h4>
+                        Personal Details
+                    </h4>
+                </div>
 
                 <div className="profileFormDiv">
                     <div className="profilePhoto">

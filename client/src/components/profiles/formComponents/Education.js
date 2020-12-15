@@ -23,7 +23,9 @@ const Education = ( { setEducation, educationData, navigation }) => {
     return(
         <div>
             <div className="heading">
-                Education
+                <h4>
+                    Education
+                </h4>
             </div>
             <div className="profileFormDiv">
 
